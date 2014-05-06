@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  get 'one_drive_room/index'
+  get 'one_drive_room/index/:id', to: 'one_drive_room#index', :constraints => {id: /[0-9a-zA-Z!.]+/}
+  get 'one_drive_room/download/:id', to: 'one_drive_room#download', :constraints => {id: /[0-9a-zA-Z!.]+/}
+  get 'one_drive_room/signin'
+  get 'one_drive_room/signin/:token', to: 'one_drive_room#signin'
+  get 'one_drive_room/show'
+  get 'one_drive_room/edit'
+  post 'one_drive_room/update'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

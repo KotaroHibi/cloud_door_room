@@ -1,0 +1,20 @@
+<h1>onedrive setting</h1>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>CLIENT_ID:</strong>
+  <%= @onedrive.client_id %>
+</p>
+
+<p>
+  <strong>CLIENT_SECRET:</strong>
+  <%= @onedrive.client_secret %>
+</p>
+
+<p>
+  <strong>REDIRECT_URL:</strong>
+  <%= @onedrive.redirect_url %>
+</p>
+
+<%= link_to "Edit", controller: "one_drive_room", action:"edit" %>

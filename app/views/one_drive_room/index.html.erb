@@ -1,0 +1,19 @@
+<h1>OneDriveRoom#index</h1>
+
+<p><%= @user_name %>でログイン中</p>
+
+<ul>
+<% @datas.each do |data| %>
+  <% if (data['type'] == 'folder' || data['type'] == 'album') %>
+    <% action = :index %>
+  <% else %>
+    <% action = :download %>
+  <% end %>
+  <li><%= "[#{data['type']}]" %><%= link_to data['name'], action: action, id: data['id'] %>
+<% end %>
+</ul>
+
+<% if (@parent.present?) %>
+<%= link_to '上へ戻る', action: :index, id: @parent %>&nbsp;|&nbsp;
+<%= link_to 'トップへ戻る', action: :index, id: nil %>
+<% end %>
